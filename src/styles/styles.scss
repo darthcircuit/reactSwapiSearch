@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    display: grid;
+    text-align: center;
+    font-family: sans-serif;
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: maroon;
+        a {
+            color: gray;
+            font-weight: bold;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        .active-link {
+            background-color: gray;
+            color: maroon;
+        }
+    }
+}

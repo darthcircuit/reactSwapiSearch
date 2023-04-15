@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
+import { useState } from "react"
+
+import "./styles/styles.scss"
+import Swapi from "./comp/SwapiLanding";
+import Home from "./comp/Home"
+import Navbar from "./comp/Navbar"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Router>
+        <Route component={Navbar} />
+        
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path="/person" component={Swapi} />
+        </Switch>
+      </Router>
+
+     {/* {id? <Swapi id={id} /> : null} */}
+
     </div>
   );
 }
